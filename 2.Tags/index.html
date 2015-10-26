@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Hello Tags!</title>
+    <script src="build/react.js"></script>
+    <script src="build/react-dom.js"></script>
+    <script src="build/babel.js"></script>
+  </head>
+  <body>
+    <!-- Contenedor de la APP -->
+    <div id="example"></div>
+
+  
+	<script type="text/babel">
+		// Componente 1
+		var TagBox = React.createClass({
+			render: function () {
+				return (
+					<div>
+						<input type="text" placeholder="Indicar tag" onChange={this.setTag}/>
+						<button type="button" onClick={this.saveTag}>Añadir</button>
+					</div>
+				);
+			},
+
+			setTag: function (e) {
+				this.setState({ tag: e.target.value });
+			},
+
+			saveTag: function () {
+				this.props.saveTag(this.state.tag);
+			}
+		});
+
+		// Componente 2
+		var TagList = React.createClass({
+			render: function () {
+				if (this.props.tags.length === 0) {
+					return (
+						<h3>No existen tags. Inserte nuevos tags</h3>
+					)
+				}
+
+				return (
+					<ul>
+					{
+						this.props.tags.map(function (tag) {
+							return (
+								<li>{tag}</li>
+							);
+						})
+					}
+					</ul>
+				)
+			}
+		});
+
+		//Componente 3
+		var TagContent = React.createClass({
+			getInitialState: function () {
+    			return {
+    				tags: []
+    			}
+  			},
+
+			saveTag: function (tag) {
+				this.setState({ tag: this.state.tags.push(tag) });
+			},
+
+			render: function () {
+				return (
+					<div>
+						<h1>Hello Tags!</h1>
+						<TagBox saveTag={this.saveTag}/>
+						<TagList tags={this.state.tags}/>
+					</div>
+				)
+			}
+		})		
+
+		ReactDOM.render(
+			<TagContent/>,
+			document.getElementById('example')
+		);
+	</script>
+
+  </body>
+</html>
