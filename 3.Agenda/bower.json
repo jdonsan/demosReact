@@ -1,0 +1,20 @@
+{
+  "name": "3.Agenda",
+  "version": "0.0.0",
+  "homepage": "https://github.com/jdonsan/demosReact",
+  "authors": [
+    "José Antonio Dongil Sánchez <jose.dongil@gmail.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "build/vendors/",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.3.5"
+  }
+}

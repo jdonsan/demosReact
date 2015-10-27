@@ -1,0 +1,29 @@
+{
+  "name": "demoreact",
+  "version": "1.0.0",
+  "description": "Dem React",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "jdonsan"
+  },
+  "keywords": [
+    "demo",
+    "react",
+    "marvel"
+  ],
+  "author": "jdonsan",
+  "license": "MIT",
+  "dependencies": {
+    "react": "^0.13.3"
+  },
+  "devDependencies": {
+    "babelify": "^6.3.0",
+    "browserify": "^11.1.0",
+    "gulp": "^3.9.0",
+    "vinyl-source-stream": "^1.1.0"
+  }
+}
